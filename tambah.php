@@ -30,26 +30,24 @@ if(isset($_POST['simpan'])) {
 <body>
     <h2>Tambah Produk</h2>
     <form method="POST" action="">
-        <label>Kode Produk:</label>
-        <input type="text" name="kode_produk" required><br><br>
+        <label for="kode_produk">Kode Produk:</label>
+        <input type="text" name="kode_produk" id="kode_produk" required><br><br>
 
-        <label>Nama Produk:</label>
-        <input type="text" name="nama_produk" required><br><br>
+        <label for="nama_produk">Nama Produk:</label>
+        <input type="text" name="nama_produk" id="nama_produk" required><br><br>
 
-        <label>Harga:</label>
-        <input type="number" name="harga" required><br><br>
+        <label for="harga">Harga:</label>
+        <input type="number" name="harga" id="harga" required><br><br>
 
-        <label>Deskripsi:</label>
-        <textarea name="deskripsi" required></textarea><br><br>
+        <label for="deskrepsi">Deskripsi:</label>
+        <textarea name="deskripsi" id="deskrepsi" required></textarea><br><br>
 
-        <label>Status Stok:</label>
-        <select name="status_stok" required>
-            <option value="Tersedia">Tersedia</option>
-            <option value="Habis">Habis</option>
-        </select><br><br>
+        <label for="status_stok">Status Stok:</label>
+        <input type="radio" name="status_stok" id="status_stok" value="Tersedia" > Tersedia
+        <input type="radio" name="status_stok" id="status_stok" value="Habis" > Habis<br><br>
 
-        <label>Kategori:</label>
-        <select name="kategori" required>
+        <label for="kategori">Kategori:</label>
+        <select name="kategori" id="kategori" required>
             <option value="Seragam">Seragam</option>
             <option value="Atribut">Atribut</option>
             <option value="Makanan">Makanan</option>

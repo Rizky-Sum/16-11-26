@@ -42,24 +42,24 @@ if (isset($_POST['update'])) {
 <body>
     <h2>Edit Produk </h2>
     <form method="POST" action="">
-        <label>Kode Produk:</label><br>
-        <input type="text" name="kode_produk" value="<?php echo $data['kode_produk']; ?>"><br><br>
+        <label for="kode_produk">Kode Produk:</label><br>
+        <input type="text" name="kode_produk" id="kode_produk" value="<?php echo $data['kode_produk']; ?>"><br><br>
 
-        <label>Nama Produk:</label><br>
-        <input type="text" name="nama_produk" value="<?php echo $data['nama_produk']; ?>"><br><br>
+        <label for="nama_produk">Nama Produk:</label><br>
+        <input type="text" name="nama_produk" id="nama_produk" value="<?php echo $data['nama_produk']; ?>"><br><br>
 
-        <label>Harga:</label><br>
-        <input type="number" name="harga" value="<?php echo $data['harga']; ?>"><br><br>
+        <label for="harga">Harga:</label><br>
+        <input type="number" name="harga" id="harga" value="<?php echo $data['harga']; ?>"><br><br>
 
-        <label>Deskripsi:</label><br>
-        <textarea name="deskripsi"><?php echo $data['deskripsi']; ?></textarea><br><br>
+        <label for="deskripsi">Deskripsi:</label><br>
+        <textarea name="deskripsi" id="deskripsi" ><?php echo $data['deskripsi']; ?></textarea><br><br>
 
-        <label>Status Stok:</label><br>
-        <input type="radio" name="status_stok" value="Tersedia" <?php if ($data['status_stok'] == 'Tersedia') echo 'checked' ?>> Tersedia
-        <input type="radio" name="status_stok" value="Habis" <?php if ($data['status_stok'] == 'Habis') echo 'checked' ?>> Habis<br><br>
+        <label for="status_stok">Status Stok:</label><br>
+        <input type="radio" name="status_stok" value="Tersedia" id="status_stok" <?php if ($data['status_stok'] == 'Tersedia') echo 'checked' ?>> Tersedia
+        <input type="radio" name="status_stok" value="Habis" id="status_stok" <?php if ($data['status_stok'] == 'Habis') echo 'checked' ?>> Habis<br><br>
 
-        <label>Kategori:</label><br>
-        <select name="kategori">
+        <label for="kategori">Kategori:</label><br>
+        <select name="kategori" id="kategori">
             <option value="Seragam" <?php if ($data['kategori_produk'] == 'Seragam') echo 'selected'; ?>>Seragam</option>
             <option value="Atribut" <?php if ($data['kategori_produk'] == 'Atribut') echo 'selected'; ?>>Atribut</option>
             <option value="Makanan" <?php if ($data['kategori_produk'] == 'Makanan') echo 'selected'; ?>>Makanan</option>

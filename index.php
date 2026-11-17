@@ -8,10 +8,11 @@ $query = "SELECT * FROM produk";
 if ($search != "") {
     $search = mysqli_real_escape_string($koneksi, $search);
     $query .= " WHERE 
-        kode_produk LIKE '%$search%' OR
-        nama_produk LIKE '%$search%' OR
+        kode_produk = '$search' OR
+        nama_produk LIKE '$search' OR
         kategori_produk LIKE '%$search%' OR
         deskripsi LIKE '%$search%'";
+        // harga LIKE '%$search%'";
 }
 
 $query .= " ORDER BY id DESC";
@@ -64,7 +65,7 @@ $result = mysqli_query($koneksi, $query);
                     <td><?php echo $no++; ?></td>
                     <td><?php echo $data['kode_produk']; ?></td>
                     <td><?php echo $data['nama_produk']; ?></td>
-                    <td><?php echo $data['harga']; ?></td>
+                    <td><?php echo number_format($data['harga'], 0, ', ', '.'); ?></td>
                     <td><?php echo $data['deskripsi']; ?></td>
                     <td><?php echo $data['status_stok']; ?></td>
                     <td><?php echo $data['kategori_produk']; ?></td>
