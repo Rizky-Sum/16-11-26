@@ -31,20 +31,21 @@ if (isset($_POST['simpan'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tambah Produk</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
     <h2>Tambah Produk</h2>
     <form method="POST" action="">
-        <label for="kode_produk">Kode Produk:</label>
+        <label for="kode_produk">Kode Produk:</label><br>
         <input type="text" name="kode_produk" id="kode_produk" required><br><br>
 
-        <label for="nama_produk">Nama Produk:</label>
+        <label for="nama_produk">Nama Produk:</label><br>
         <input type="text" name="nama_produk" id="nama_produk" required><br><br>
 
-        <label for="harga">Harga:</label>
+        <label for="harga">Harga:</label><br>
         <input type="number" name="harga" id="harga" required><br><br>
 
-        <label for="deskripsi">Deskripsi:</label>
+        <label for="deskripsi">Deskripsi:</label><br>
         <textarea name="deskripsi" id="deskripsi" required></textarea><br><br>
 
         <label >Status Stok:</label>

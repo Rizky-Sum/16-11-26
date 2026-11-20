@@ -31,12 +31,13 @@ if (!$result) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Koperasi</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <h2>Koperasi</h2>
 
-    <form method="GET" action="index.php" style="margin-bottom: 20px;">
+    <form method="GET" action="index.php" style="margin-bottom: 20px;" class="cari">
         <input type="text" name="search" value="<?php echo htmlspecialchars($search); ?>" placeholder="Cari produk..." />
         <button type="submit">Cari</button>
         <?php if ($search != "") { ?>
@@ -44,9 +45,13 @@ if (!$result) {
         <?php } ?>
     </form>
 
-    <a href="tambah.php">Tambah Produk</a> |
+    <nav class="A">
+    <a href="tambah.php">Tambah Produk</a>
+    <br>
     <a href="kategori/index.php">Kelola Kategori</a>
+    </nav>
     <br><br>
+
 
     <?php if (isset($_GET['pesan'])) { ?>
         <p><b>Status:</b> <?php echo htmlspecialchars($_GET['pesan']); ?></p>
@@ -87,8 +92,8 @@ if (!$result) {
                         <?php } ?>
                         <?php echo htmlspecialchars($namaKategori); ?>
                     </td>
-                    <td>
-                        <a href="edit.php?id=<?php echo $data['id']; ?>">Edit</a> |
+                    <td class="aksi">
+                        <a href="edit.php?id=<?php echo $data['id']; ?>">Edit</a> 
                         <a href="hapus.php?id=<?php echo $data['id']; ?>" onclick="return confirm('Apakah Anda yakin ingin menghapus produk ini?')">Hapus</a>
                     </td>
                 </tr>

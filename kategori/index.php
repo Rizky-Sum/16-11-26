@@ -9,12 +9,13 @@ $result = mysqli_query($koneksi, "SELECT * FROM kategori ORDER BY id DESC");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kategori</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
 </head>
 <body>
 
     <h2>Kategori Produk</h2>
 
-    <a href="tambah.php">Tambah Kategori</a> |
+    <a href="tambah.php">Tambah Kategori</a> 
     <a href="../index.php">Kembali ke Produk</a>
     <br><br>
 
