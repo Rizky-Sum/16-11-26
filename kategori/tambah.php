@@ -1,6 +1,7 @@
 <?php
 include "../koneksi.php";
-include "fungsi.php";
+include "../auth.php";
+require_login();
 
 $error = '';
 

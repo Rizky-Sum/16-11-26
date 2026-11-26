@@ -1,5 +1,7 @@
 <?php
 include "koneksi.php";
+include "auth.php";
+require_login();
 
 $search = isset($_GET['search']) ? trim($_GET['search']) : '';
 
@@ -36,6 +38,11 @@ if (!$result) {
 <body>
 
     <h2>Koperasi</h2>
+
+    <nav class="A">
+        <span>Login sebagai: <b><?php echo htmlspecialchars($_SESSION['username']); ?></b></span>
+        <a href="logout.php">Logout</a>
+    </nav>
 
     <form method="GET" action="index.php" style="margin-bottom: 20px;" class="cari">
         <input type="text" name="search" value="<?php echo htmlspecialchars($search); ?>" placeholder="Cari produk..." />

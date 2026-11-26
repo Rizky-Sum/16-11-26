@@ -1,5 +1,7 @@
 <?php 
 include "koneksi.php";
+include "auth.php";
+require_login();
 
 $id = $_GET['id'];
 $hapus = mysqli_query($koneksi, "DELETE FROM produk WHERE id = '$id'");

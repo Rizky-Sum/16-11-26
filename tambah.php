@@ -1,5 +1,7 @@
 <?php
 include "koneksi.php";
+include "auth.php";
+require_login();
 
 // Ambil daftar kategori dari modul Kategori
 $kategori = mysqli_query($koneksi, "SELECT id, nama_kategori FROM kategori ORDER BY nama_kategori ASC");

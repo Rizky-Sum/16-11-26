@@ -1,5 +1,7 @@
 <?php
 include "../koneksi.php";
+include "../auth.php";
+require_login();
 
 $result = mysqli_query($koneksi, "SELECT * FROM kategori ORDER BY id DESC");
 ?>
@@ -14,6 +16,11 @@ $result = mysqli_query($koneksi, "SELECT * FROM kategori ORDER BY id DESC");
 <body>
 
     <h2>Kategori Produk</h2>
+
+    <nav class="A">
+        <span>Login sebagai: <b><?php echo htmlspecialchars($_SESSION['username']); ?></b></span>
+        <a href="../logout.php">Logout</a>
+    </nav>
 
     <a href="tambah.php">Tambah Kategori</a> 
     <a href="../index.php">Kembali ke Produk</a>

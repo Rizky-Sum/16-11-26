@@ -1,5 +1,7 @@
 <?php
 include "koneksi.php";
+include "auth.php";
+require_login();
 
 $id = (int) $_GET['id'];
 

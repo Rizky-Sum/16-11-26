@@ -35,6 +35,16 @@ CREATE TABLE IF NOT EXISTS produk (
 );
 
 -- =====================================
+-- AUTENTIKASI LOGIN
+-- =====================================
+
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL
+);
+
+-- =====================================
 -- INSERT DATA KATEGORI
 -- =====================================
 
@@ -62,3 +72,7 @@ VALUES
 ('0096-SRG', 'Topi Sekolah', 15000, 'Topi identitas sekolah', 'Tersedia', (SELECT id FROM kategori WHERE nama_kategori = 'Seragam & Atribut')),
 ('0097-JCT', 'Cetak Hitam Putih', 500, 'Jasa cetak dokumen hitam putih', 'Tersedia', (SELECT id FROM kategori WHERE nama_kategori = 'Jasa Cetak')),
 ('0098-JCT', 'Cetak Warna', 1500, 'Jasa cetak dokumen berwarna', 'Habis', (SELECT id FROM kategori WHERE nama_kategori = 'Jasa Cetak'));
+
+INSERT INTO users (username, password)
+VALUES ('admin', '$2y$10$BLEl38GolhqHYwL1.OgVl.pcGEJTaz2ULPgvMqwv/9BAdVlRPNpOC')
+ON DUPLICATE KEY UPDATE username = VALUES(username);
